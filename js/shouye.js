@@ -9,32 +9,32 @@ dingbubtn2.onclick = function() {
 	tu.style.display = "block";
 }
 
-//导航
-let dingbutop = document.querySelectorAll(".dingbu .flaga");
-let dingbubottom = document.querySelectorAll(".dingbu .flag");
-let dingbutopi = document.querySelectorAll(".dingbu .flaga i");
-let dingbuya = document.querySelectorAll(".dingbu .ya");
-let arrHeight = ["242px", "124px", "124px", "124px", "150px", "302px", "222px"]
-
-dingbutop.forEach(function(val, index) {
-	val.onmouseover = function() {
-		dingbutopi[index].style.transform = "rotate(-180deg)";
-		dingbubottom[index].style.height = arrHeight[index];
-		val.classList.add("active");
-		dingbubottom[index].classList.add("active");
-		dingbuya[index].style.display = "block";
-	}
-})
-dingbutop.forEach(function(val, index) {
-	val.onmouseout = function() {
-		dingbutopi[index].style.transform = "rotate(0deg)";
-		dingbubottom[index].style.height = "0";
-		val.classList.remove("active");
-		dingbubottom[index].classList.remove("active");
-		dingbuya[index].style.display = "none";
-	}
-})
-
+// //导航
+// let dingbutop = document.querySelectorAll(".dingbu .flaga");
+// let dingbubottom = document.querySelectorAll(".dingbu .flag");
+// let dingbutopi = document.querySelectorAll(".dingbu .flaga i");
+// let dingbuya = document.querySelectorAll(".dingbu .ya");
+// let arrHeight = ["242px", "124px", "124px", "124px", "150px", "302px", "222px"]
+// 
+// dingbutop.forEach(function(val, index) {
+// 	val.onmouseover = function() {
+// 		dingbutopi[index].style.transform = "rotate(-180deg)";
+// 		dingbubottom[index].style.height = arrHeight[index];
+// 		val.classList.add("active");
+// 		dingbubottom[index].classList.add("active");
+// 		dingbuya[index].style.display = "block";
+// 	}
+// })
+// dingbutop.forEach(function(val, index) {
+// 	val.onmouseout = function() {
+// 		dingbutopi[index].style.transform = "rotate(0deg)";
+// 		dingbubottom[index].style.height = "0";
+// 		val.classList.remove("active");
+// 		dingbubottom[index].classList.remove("active");
+// 		dingbuya[index].style.display = "none";
+// 	}
+// })
+// 
 
 //头部
 let input = document.querySelector(".head input");
@@ -97,60 +97,60 @@ banneryoula.forEach(function(val, index) {
 })
 
 //轮播图右
-let bannerimg = document.querySelectorAll(".banner .right .banner-tu img");
-let bannerright = document.querySelector(".banner .right");
-let bannerleftbtn = document.querySelector(".banner .right .left-btn");
-let bannerrightbtn = document.querySelector(".banner .right .right-btn");
-let bannerdian = document.querySelectorAll(".banner .right .dian>div");
-let bannerN = 0;
-let bannerSize = bannerimg.length - 1;
-
-bannerright.onmouseover = function() {
-	clearInterval(time);
-}
-bannerright.onmouseout = function() {
-	time = setInterval(function() {
-		bannerN++;
-		Move();
-	}, 2000)
-}
-let time = setInterval(function() {
-	bannerN++;
-	Move();
-}, 2000)
-bannerrightbtn.onclick = function() {
-	bannerN++;
-	Move();
-}
-bannerleftbtn.onclick = function() {
-	bannerN--;
-	Move();
-}
-bannerdian.forEach(function(value, key) {
-	value.onmouseover = function() {
-		bannerN = key;
-		Move();
-	}
-})
-
-function Move() {
-
-	bannerimg.forEach(function(val, index) {
-		val.classList.remove("active");
-	})
-	if (bannerN > bannerSize) {
-		bannerN = 0;
-	}
-	if (bannerN < 0) {
-		bannerN = bannerSize;
-	}
-	bannerdian.forEach(function(ele) {
-		ele.classList.remove("active")
-	})
-	bannerdian[bannerN].classList.add("active");
-	bannerimg[bannerN].classList.add("active");
-}
-
+// let bannerimg = document.querySelectorAll(".banner .right .banner-tu img");
+// let bannerright = document.querySelector(".banner .right");
+// let bannerleftbtn = document.querySelector(".banner .right .left-btn");
+// let bannerrightbtn = document.querySelector(".banner .right .right-btn");
+// let bannerdian = document.querySelectorAll(".banner .right .dian>div");
+// let bannerN = 0;
+// let bannerSize = bannerimg.length - 1;
+// 
+// bannerright.onmouseover = function() {
+// 	clearInterval(time);
+// }
+// bannerright.onmouseout = function() {
+// 	time = setInterval(function() {
+// 		bannerN++;
+// 		Move();
+// 	}, 2000)
+// }
+// let time = setInterval(function() {
+// 	bannerN++;
+// 	Move();
+// }, 2000)
+// bannerrightbtn.onclick = function() {
+// 	bannerN++;
+// 	Move();
+// }
+// bannerleftbtn.onclick = function() {
+// 	bannerN--;
+// 	Move();
+// }
+// bannerdian.forEach(function(value, key) {
+// 	value.onmouseover = function() {
+// 		bannerN = key;
+// 		Move();
+// 	}
+// })
+// 
+// function Move() {
+// 
+// 	bannerimg.forEach(function(val, index) {
+// 		val.classList.remove("active");
+// 	})
+// 	if (bannerN > bannerSize) {
+// 		bannerN = 0;
+// 	}
+// 	if (bannerN < 0) {
+// 		bannerN = bannerSize;
+// 	}
+// 	bannerdian.forEach(function(ele) {
+// 		ele.classList.remove("active")
+// 	})
+// 	bannerdian[bannerN].classList.add("active");
+// 	bannerimg[bannerN].classList.add("active");
+// }
+// 
 //轮播图user
 let userul = document.querySelector(".banner .user-middle ul.user-flag1");
 let userMiddle = document.querySelector(".banner .user-middle");
